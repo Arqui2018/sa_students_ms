@@ -6,6 +6,11 @@ git_source(:github) do |repo_name|
 end
 
 
+# gems installed for the project
+gem 'net-ldap'
+
+
+# gems installed by default
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.5'
 # Use mysql as the database for Active Record
@@ -40,5 +45,5 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'therubyracer', :platforms => :ruby 
+gem 'therubyracer', :platforms => :ruby
 gem 'execjs'
