@@ -6,7 +6,7 @@ WORKDIR /students-ms
 ADD Gemfile /students-ms/Gemfile
 ADD Gemfile.lock /students-ms/Gemfile.lock
 
-RUN bundle install
+RUN bundle install --without development test
 ADD . /students-ms
 
 EXPOSE 4000

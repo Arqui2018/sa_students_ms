@@ -12,8 +12,15 @@ services:
       MYSQL_HOST: students-db
   students-ms:
     build: .
-    command: bash -c "sleep 40 && rm -f tmp/pids/server.pid && bundle exec rails db:migrate && bundle exec rails s -p 4000 -b '0.0.0.0'"
+    command: bash -c "rm -f tmp/pids/server.pid && rails db:migrate && rails s"
     ports:
       - "4000:4000"
     depends_on:
       - students-db
+    environment:
+      PORT: '4000'
+      MYSQL_USER: arquisoft
+      MYSQL_PASSWORD: 123
+      MYSQL_DATABASE: students
+      MYSQL_HOST: students-db
+      SECRET_KEY_BASE: 592eeca19ef1458076784965f35dc0d1aafb33822660943f58bf04765551a9d1558a2a52f71ee295fc3c86649e171a3f5333b4df2aa02a3f14cf92232a1bca28
